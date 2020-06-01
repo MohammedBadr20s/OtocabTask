@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cDB-IL-Nbg">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Lato-Semibold.ttf">
+            <string>Lato-Semibold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--LoadingVC-->
+        <scene sceneID="ecz-Lk-K6x">
+            <objects>
+                <viewController id="cDB-IL-Nbg" customClass="LoadingVC" customModule="OtocabTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6iW-gO-bGK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OtocabTask" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Rb-Fp-RWR">
+                                <rect key="frame" x="162" y="392.5" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="aqk-0M-5IL">
+                                <rect key="frame" x="188.5" y="423.5" width="37" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="color" red="0.99459713699999996" green="0.7729405761" blue="0.040680907670000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2Rb-Fp-RWR" firstAttribute="centerY" secondItem="J4p-0q-han" secondAttribute="centerY" constant="-50" id="1Ey-oW-4l2"/>
+                            <constraint firstItem="aqk-0M-5IL" firstAttribute="centerX" secondItem="2Rb-Fp-RWR" secondAttribute="centerX" id="gbs-29-1H3"/>
+                            <constraint firstItem="aqk-0M-5IL" firstAttribute="top" secondItem="2Rb-Fp-RWR" secondAttribute="bottom" constant="10" id="pQK-HK-xTl"/>
+                            <constraint firstItem="2Rb-Fp-RWR" firstAttribute="centerX" secondItem="J4p-0q-han" secondAttribute="centerX" id="q30-2N-kXb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="J4p-0q-han"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MDW-pI-W3n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-752.17391304347836" y="138.61607142857142"/>
+        </scene>
+        <!--Location Picker-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="LocationVC" id="BYZ-38-t0r" customClass="LocationVC" customModule="OtocabTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LSr-9v-tta">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBm-oy-I4P" customClass="GMSMapView">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="565.5"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4g-0d-wTF">
+                                        <rect key="frame" x="359" y="5" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="VAr-Il-G6J"/>
+                                            <constraint firstAttribute="height" constant="50" id="sxJ-OH-s9t"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="my location icon"/>
+                                        <connections>
+                                            <action selector="currentLocationBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zBO-SF-GUK"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmj-Eb-BTO" userLabel="LocationView" customClass="CustomView" customModule="OtocabTask" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="573.5" width="414" height="234.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Up Your Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3F-cV-pLO">
+                                                <rect key="frame" x="20" y="0.0" width="374" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="map-pin" translatesAutoresizingMaskIntoConstraints="NO" id="WoU-c7-oK3">
+                                                <rect key="frame" x="20" y="23.5" width="25" height="25"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltl-oP-vfj">
+                                                <rect key="frame" x="47" y="23.5" width="359" height="25"/>
+                                                <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="17"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="Lato-Semibold" family="Lato" pointSize="17"/>
+                                                </variation>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcj-ot-dUn" customClass="CustomButtons" customModule="OtocabTask" customModuleProvider="target">
+                                                <rect key="frame" x="20" y="164.5" width="374" height="50"/>
+                                                <color key="backgroundColor" red="0.99459713699999996" green="0.7729405761" blue="0.040680907670000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Zgm-6u-niW"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="Confirm Your Location">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                </variation>
+                                                <connections>
+                                                    <action selector="PickUpDropOffLocationAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZDk-h2-K4U"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="Ltl-oP-vfj" firstAttribute="leading" secondItem="WoU-c7-oK3" secondAttribute="trailing" constant="2" id="1El-Hk-EMG"/>
+                                            <constraint firstItem="Ltl-oP-vfj" firstAttribute="centerY" secondItem="WoU-c7-oK3" secondAttribute="centerY" id="1ft-tl-gIc"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ltl-oP-vfj" secondAttribute="trailing" constant="8" id="2Ip-p7-gfm"/>
+                                            <constraint firstItem="WoU-c7-oK3" firstAttribute="top" secondItem="J3F-cV-pLO" secondAttribute="bottom" constant="3" id="G9r-y3-Oni"/>
+                                            <constraint firstItem="WoU-c7-oK3" firstAttribute="leading" secondItem="zmj-Eb-BTO" secondAttribute="leading" constant="20" id="Lqk-Ao-KDU"/>
+                                            <constraint firstItem="rcj-ot-dUn" firstAttribute="leading" secondItem="zmj-Eb-BTO" secondAttribute="leading" constant="20" id="aVO-2T-frc"/>
+                                            <constraint firstItem="J3F-cV-pLO" firstAttribute="top" secondItem="zmj-Eb-BTO" secondAttribute="top" id="c4E-Eu-kBH"/>
+                                            <constraint firstAttribute="trailing" secondItem="J3F-cV-pLO" secondAttribute="trailing" constant="20" id="eh4-Dr-MpM"/>
+                                            <constraint firstAttribute="bottom" secondItem="rcj-ot-dUn" secondAttribute="bottom" constant="20" id="jbg-j0-YoS"/>
+                                            <constraint firstItem="rcj-ot-dUn" firstAttribute="centerX" secondItem="zmj-Eb-BTO" secondAttribute="centerX" id="nJZ-Cf-ZNB"/>
+                                            <constraint firstItem="Ltl-oP-vfj" firstAttribute="top" secondItem="J3F-cV-pLO" secondAttribute="bottom" constant="3" id="uop-gy-Jqx"/>
+                                            <constraint firstItem="J3F-cV-pLO" firstAttribute="leading" secondItem="zmj-Eb-BTO" secondAttribute="leading" constant="20" id="zqf-s1-mcO"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search for Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vt8-IP-pi0" customClass="CustomTextField" customModule="OtocabTask" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="5" width="339" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="rY0-Yg-bCa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.99459713699999996" green="0.7729405761" blue="0.040680907670000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="searchDidChange:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="TZd-8a-6ba"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="gBm-oy-I4P" firstAttribute="leading" secondItem="LSr-9v-tta" secondAttribute="leading" id="Hcn-nd-sSH"/>
+                                    <constraint firstItem="gBm-oy-I4P" firstAttribute="width" secondItem="LSr-9v-tta" secondAttribute="width" id="J5f-dO-fHi"/>
+                                    <constraint firstItem="gBm-oy-I4P" firstAttribute="height" secondItem="LSr-9v-tta" secondAttribute="height" multiplier="0.7" id="PF8-W6-HuC"/>
+                                    <constraint firstItem="vt8-IP-pi0" firstAttribute="leading" secondItem="LSr-9v-tta" secondAttribute="leading" constant="10" id="QyT-JK-Nlh"/>
+                                    <constraint firstItem="W4g-0d-wTF" firstAttribute="top" secondItem="LSr-9v-tta" secondAttribute="top" constant="5" id="Ucq-N3-7tI"/>
+                                    <constraint firstAttribute="trailing" secondItem="gBm-oy-I4P" secondAttribute="trailing" id="VM1-ia-C97"/>
+                                    <constraint firstItem="vt8-IP-pi0" firstAttribute="top" secondItem="LSr-9v-tta" secondAttribute="top" constant="5" id="Wor-nR-oKV"/>
+                                    <constraint firstItem="zmj-Eb-BTO" firstAttribute="centerX" secondItem="LSr-9v-tta" secondAttribute="centerX" id="Xql-Qa-z4m"/>
+                                    <constraint firstItem="gBm-oy-I4P" firstAttribute="top" secondItem="LSr-9v-tta" secondAttribute="top" id="ZXB-c6-vgs"/>
+                                    <constraint firstAttribute="bottom" secondItem="zmj-Eb-BTO" secondAttribute="bottom" id="Zgc-i2-Ss8"/>
+                                    <constraint firstItem="gBm-oy-I4P" firstAttribute="centerX" secondItem="LSr-9v-tta" secondAttribute="centerX" id="awH-WG-SyM"/>
+                                    <constraint firstItem="W4g-0d-wTF" firstAttribute="leading" secondItem="vt8-IP-pi0" secondAttribute="trailing" constant="10" id="bZa-nw-nyo"/>
+                                    <constraint firstItem="zmj-Eb-BTO" firstAttribute="top" secondItem="gBm-oy-I4P" secondAttribute="bottom" constant="8" symbolic="YES" id="gmp-4o-S8F"/>
+                                    <constraint firstItem="zmj-Eb-BTO" firstAttribute="width" secondItem="LSr-9v-tta" secondAttribute="width" id="isL-V4-FBU"/>
+                                    <constraint firstAttribute="trailing" secondItem="W4g-0d-wTF" secondAttribute="trailing" constant="5" id="ouX-qe-rcY"/>
+                                    <constraint firstItem="zmj-Eb-BTO" firstAttribute="width" secondItem="gBm-oy-I4P" secondAttribute="width" id="pnl-ly-UpP"/>
+                                    <constraint firstItem="zmj-Eb-BTO" firstAttribute="centerX" secondItem="gBm-oy-I4P" secondAttribute="centerX" id="tNr-Aw-3DI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LSr-9v-tta" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fkb-Xb-6KO"/>
+                            <constraint firstAttribute="bottom" secondItem="LSr-9v-tta" secondAttribute="bottom" id="hub-sw-MTf"/>
+                            <constraint firstItem="LSr-9v-tta" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pG4-pl-Q6K"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LSr-9v-tta" secondAttribute="trailing" id="tFW-A5-rtA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Location Picker" id="Glt-xz-4oO"/>
+                    <connections>
+                        <outlet property="LocationButton" destination="rcj-ot-dUn" id="deE-Ja-CLY"/>
+                        <outlet property="LocationStateLabel" destination="J3F-cV-pLO" id="cXz-tx-Uc5"/>
+                        <outlet property="addressLabel" destination="Ltl-oP-vfj" id="ZEN-oX-quO"/>
+                        <outlet property="googleMapsView" destination="gBm-oy-I4P" id="g84-g2-jI2"/>
+                        <outlet property="searchTF" destination="vt8-IP-pi0" id="qkn-hC-EQd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1562" y="118"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6iL-Kl-bva">
+            <objects>
+                <navigationController storyboardIdentifier="LocationNav" automaticallyAdjustsScrollViewInsets="NO" id="0rF-MD-TAF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="fTd-8O-deb">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.99459713699999996" green="0.7729405761" blue="0.040680907670000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uRf-Lr-9KJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1XS-NP-rQQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840.57971014492762" y="117.85714285714285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="map-pin" width="25" height="25"/>
+        <image name="my location icon" width="50" height="50"/>
+    </resources>
+</document>
