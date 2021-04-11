@@ -1,0 +1,35 @@
+PODS:
+  - GoogleMaps (3.8.2):
+    - GoogleMaps/Maps (= 3.8.2)
+  - GoogleMaps/Base (3.8.2)
+  - GoogleMaps/Maps (3.8.2):
+    - GoogleMaps/Base
+  - GooglePlaces (3.8.2):
+    - GoogleMaps/Base (= 3.8.2)
+  - IQKeyboardManagerSwift (6.3.0)
+  - SwiftMessages (6.0.2):
+    - SwiftMessages/App (= 6.0.2)
+  - SwiftMessages/App (6.0.2)
+
+DEPENDENCIES:
+  - GoogleMaps (~> 3.8.0)
+  - GooglePlaces (~> 3.8.0)
+  - IQKeyboardManagerSwift (~> 6.3.0)
+  - SwiftMessages (~> 6.0.2)
+
+SPEC REPOS:
+  trunk:
+    - GoogleMaps
+    - GooglePlaces
+    - IQKeyboardManagerSwift
+    - SwiftMessages
+
+SPEC CHECKSUMS:
+  GoogleMaps: ae0efe10e9c40bcd9decd0c9fd53d947af7801a3
+  GooglePlaces: 8baf0c60e318431ca3c1b022f2745a23b104caca
+  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  SwiftMessages: 8b3cc68dba2f1c91aac1a74c90b10287aac35371
+
+PODFILE CHECKSUM: 0f2fb7c11816a1756cf251fc3a7ce62fc71de907
+
+COCOAPODS: 1.10.1
